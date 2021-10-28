@@ -4,16 +4,21 @@ navbar:
   left:
     - text: "SLAT7806"
       href: index.html
-    - text: "Important information"
       menu:
       - text: "Course schedule"
         href: Overview.html
-      - text: "News"
-        href: news.html
     - text: "Week 1"
-      menu:
-      - text: "Lecture"
-        href: news.html
+      href: news.html
+    - text: "Week 2"
+      href: news.html
+    - text: "Week 3"
+      href: news.html
+    - text: "Week 4"
+      href: news.html
+    - text: "Week 5"
+      href: news.html
+    - text: "Week 6"
+      href: news.html
 output: 
   html_document:
     toc: true
