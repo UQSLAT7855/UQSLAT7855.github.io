@@ -2,7 +2,7 @@
 title: "SLAT7855: Quantitative Research Methods"
 author: ""
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
-output: html_document 
+output: bookdown::html_document2 
 bibliography: bibliography.bib
 link-citations: yes
 ---
