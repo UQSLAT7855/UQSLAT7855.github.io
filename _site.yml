@@ -1,24 +1,27 @@
 name: "my-website"
 navbar:
-  title: "SLAT7806"
+  title: "SLAT7806: Research Methods"
   left:
-    - text: "SLAT7806"
-      href: index.html
+    - text: "SLAT7806: Important information"
       menu:
       - text: "Course schedule"
         href: Overview.html
+      - text: "News"
+        href: news.html
     - text: "Week 1"
-      href: news.html
+      href: Wk1_Intro.html
     - text: "Week 2"
-      href: news.html
+      href: Wk2_Science.html
     - text: "Week 3"
-      href: news.html
+      href: Wk3_Basics.html
     - text: "Week 4"
-      href: news.html
+      href: Wk4_Design.html
     - text: "Week 5"
-      href: news.html
+      href: Wk5_Lit.htm
     - text: "Week 6"
-      href: news.html
+      href: Wk6_Ethics.html
+    - text: "Week 7"
+      href: Wk7_CL.html
 output: 
   html_document:
     toc: true
@@ -29,5 +32,5 @@ output:
 highlight: tango
 bibliography: references.bib
 #csl: springer.csl
-css: styles.css
+#css: styles.css
 output_dir: "."

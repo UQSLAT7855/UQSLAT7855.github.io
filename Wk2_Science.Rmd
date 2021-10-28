@@ -1,0 +1,63 @@
+---
+title: "Week 2: What is science?"
+author: ""
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+output:
+  html_document: default
+bibliography: bibliography.bib
+link-citations: yes
+---
+
+```{r uq1, echo=F, fig.cap="", message=FALSE, warning=FALSE, out.width='100%'}
+knitr::include_graphics("https://slcladal.github.io/images/uq1.jpg")
+```
+
+***
+
+# Introduction{-}
+
+This session focuses on the basic principles of science..
+
+# Before class{-}
+
+## Reading{-}
+
+For this session, please read @stefanowitsch2020corpus[21-59].
+
+## Preparation{-}
+
+Download AntConc
+
+
+Download the 
+
+# Tutorial{-}
+
+## Exercises{-}
+
+
+
+# Citation & Session Info {-}
+
+Schweinberger, Martin. `r format(Sys.time(), '%Y')`. *SLAT7806: Research Methods*. Brisbane: The University of Queensland. url: https://slcladal.github.io/basicquant.html   (Version `r format(Sys.time(), '%Y.%m.%d')`).
+
+```
+@manual{schweinberger2021slat7806,
+  author = {Schweinberger, Martin},
+  title = {SLAT7806: Research Methods},
+  note = {https://slcladal.github.io/basicquant.html},
+  year = {`r format(Sys.time(), '%Y')`},
+  organization = "The University of Queensland, Australia. School of Languages and Cultures},
+  address = {Brisbane},
+  edition = {`r format(Sys.time(), '%Y.%m.%d')`}
+}
+```
+
+***
+
+[Back to top](#introduction)
+
+***
+
+# References {-}
+
