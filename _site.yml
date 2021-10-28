@@ -1,0 +1,28 @@
+name: "my-website"
+navbar:
+  title: "SLAT7806"
+  left:
+    - text: "SLAT7806"
+      href: index.html
+    - text: "Important information"
+      menu:
+      - text: "Course schedule"
+        href: Overview.html
+      - text: "News"
+        href: news.html
+    - text: "Week 1"
+      menu:
+      - text: "Lecture"
+        href: news.html
+output: 
+  html_document:
+    toc: true
+    #theme: united
+    theme: cosmo
+    toc_float: true
+    number_sections: yes
+highlight: tango
+bibliography: references.bib
+#csl: springer.csl
+css: styles.css
+output_dir: "."

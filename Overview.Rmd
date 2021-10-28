@@ -1,0 +1,228 @@
+---
+title: 'SLAT7806: Research Methods'
+author: "Martin Schweinberger"
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+output:
+  html_document: default
+bibliography: bibliography.bib
+link-citations: yes
+---
+
+
+```{r uq1, echo=F, fig.cap="", message=FALSE, warning=FALSE, out.width='100%'}
+knitr::include_graphics("https://slcladal.github.io/images/uq1.jpg")
+```
+
+# Introduction
+
+The course consists of 1-hour lectures and 2-hour tutorials. The lecture introduces a topic and the topic is then expanded upon and tackled practically in the tutorials. To pass this course, students need to take weekly pre-class quizzes that test the content of the readings and the lecture (50%). In addition, the students will have to submit a project proposal in which they describe a research project. Furthermore, students have to either submit a video of a presentation of the project proposal or present the project proposal in the last tutorial (10%).
+
+```{r plan, echo=F, eval = T, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(flextable)
+topic <- c("Introduction and overview", 
+           "What is science?", 
+           "Basic concepts in science",
+           "Desinging a research project",
+           "Finding literature and referencing",
+           "Academic integrity",
+           "Corpus linguistics",
+           "Qualitative research", 
+           "Quantitative research: Describing data", 
+           "Quantitative research: Analyzing data", 
+           "Writing up research",  
+           "Analyzing speech",  
+           "Recap and student presentations")
+reading <- c("ECP",
+             "LADAL: Introduction to Quantitative Reasoning", 
+             "LADAL: Basic Concepts in Science",
+             "",
+             "",
+             "",
+             "",
+             "",
+             "",
+             "",
+             "",
+             "",
+             "")
+url <- c("",
+         "https://slcladal.github.io/introquant.html",
+         "https://slcladal.github.io/bsicquant.html",
+         "",
+         "",
+         "", 
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "")
+slat7806plan <- data.frame(id <- 1:13)
+slat7806plan <- slat7806plan %>%
+  dplyr::rename(Week = colnames(slat7806plan)[1]) %>%
+  dplyr::mutate(Topic = topic,
+                Reading = reading,
+                url = url
+                )
+fx <- flextable(slat7806plan) %>%
+  flextable::set_caption(caption = "Course plan for SLAT7806")  %>%
+  flextable::theme_zebra() %>%
+  flextable::autofit()
+fx
+```
+
+
+# Course plan
+
+## Week 1: Introduction and overview
+
+Lecture: basic information about the course (ECP, Assessments)
+
+Tutorial: why do we need the scientific method and how does it work?
+
+## Week 2: Conceptualizing a research project
+
+Lecture: Podcast + Slides
+
+* Scientific circle
+
+* Research question
+
+Tutorial: the research process, scientific circle, 
+
+## Week 3: Desinging a research project
+
+Lecture: Podcast + Slides
+
+Tutorial: 
+
+## Week 4: Qualitative research
+
+Lecture: Podcast + Slides
+
+Tutorial: 
+
+## Week 5: Quantitative research
+
+Lecture: Podcast + Slides
+
+Tutorial: example data set - practical task: describing and visualizing data in JASP
+
+## Week 6: Data Analysis
+
+Lecture: Podcast + Slides
+
+Tutorial: example data set - practical task: performing tests with JASP
+
+## Week 7: Writing up research
+
+Lecture: Podcast + Slides
+
+Tutorial: Features of academic English, structure of research paper, referencing and citation
+
+## Week 8: Academic integrity
+
+Lecture: Podcast + Slides
+
+Tutorial: 
+
+## Week 9: Analyzing language in context
+
+Lecture: Podcast + Slides
+
+* Sociolinguistics
+
+* Discourse Analysis
+
+Tutorial: 
+
+
+## Week 10: Analyzing speech
+
+Lecture: Podcast + Slides
+
+* Phonetics
+
+* Phonology
+
+Tutorial: 
+
+## Week 11: Bilingualism research
+
+Lecture: Podcast + Slides
+
+* Bilingualim
+
+Tutorial: 
+
+## Week 12: Corpus-based research
+
+Lecture: Podcast + Slides
+
+* Corpora
+
+* KWICs and concordances
+
+Tutorial: Practical tasks - analyzing a corpus using AntConc
+
+## Week 13: Recap and student presentations
+
+Lecture: Podcast + Slides
+
+Tutorial: Student presentations of their research proposal
+
+# Assessment
+
+To pass this course, students need to pass three main assessments.
+
+* Quizzes: students need to take **weekly pre-class quizzes** that test the content of the readings and the lecture. The quizzes will be multiple choice, or fill-in-the-gaps kind of questions. There will be 10 quizzes, each counting 5% of the overall course grade (10 x 5 = **50%**).
+
+* Project: students will have to submit a **project proposal** in which they describe a research project. (**40%**)
+
+* Presentations: students have to **present their project proposal** in the last tutorial. Students can either submit a video of the presentation of their project proposal or present in class (if possible).  (**10%**)
+
+# Materials
+
+
+**Quizzes**
+
+Availability, closing and scoring | marking will be automated on Blackboard
+
+* Week 3 (there will be two quizzes - a regular one and an additional one for late comers to the course)
+* Week 4
+* Week 5  
+* Week 6  
+* Week 7  
+* Week 8  
+* Week 9  
+* Week 10  
+* Week 11  
+* Week 12 
+
+# Citation & Session Info {-}
+
+Schweinberger, Martin. `r format(Sys.time(), '%Y')`. *SLAT7806: Research Methods*. Brisbane: The University of Queensland. url: https://slcladal.github.io/basicquant.html   (Version `r format(Sys.time(), '%Y.%m.%d')`).
+
+```
+@manual{schweinberger2021slat7806,
+  author = {Schweinberger, Martin},
+  title = {SLAT7806: Research Methods},
+  note = {https://slcladal.github.io/basicquant.html},
+  year = {`r format(Sys.time(), '%Y')`},
+  organization = "The University of Queensland, Australia. School of Languages and Cultures},
+  address = {Brisbane},
+  edition = {`r format(Sys.time(), '%Y.%m.%d')`}
+}
+```
+
+***
+
+[Back to top](#introduction)
+
+***
+
+# References {-}
+
+

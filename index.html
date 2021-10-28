@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<link rel="icon" 
+      type="image/x-icon" 
+      href="favicon.ico" />
+
+
+<meta name="author" content="" />
+
+<meta name="date" content="2021-10-24" />
+
+<title>SLAT7806: Research Methods</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<!-- added by SKC for LADAL Style -->
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  
+  <!-- Added by SKC - LADAL image and thicker top with   -->
+  <div class="container-fluid navbar-top" >
+    <a href="index.html"> <!-- Make entire top row and text clickable home link  -->
+        <div class="row">
+            <div class="navbar-brand col-md-12">
+              <img src="ladal_icon_cas_tran_white_trimed.png" class="navbar-icon" alt="SLAT7806"/>
+              <span class="navbar-title-note navbar-collapse collapse" >Language Technology and Data Analysis Laboratory</span>
+            </div>
+        </div>
+    </a>
+  </div>
+  
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- SKC removed  navbar brand -->
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">SLAT7806</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Important information
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Overview.html">Course schedule</a>
+    </li>
+    <li>
+      <a href="news.html">News</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Week 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="news.html">Lecture</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">SLAT7806: Research Methods</h1>
+<h4 class="date">2021-10-24</h4>
+
+</div>
+
+
+<p><img src="https://slcladal.github.io/images/uq1.jpg" width="100%" /></p>
+<hr />
+<div id="welcome" class="section level1 unnumbered">
+<h1>WELCOME</h1>
+<p><img src="https://slcladal.github.io/images/slc.png" width="50%" style="float:right; padding:10px" /></p>
+<p>Welcome to the website of the <em>Language Technology and Data Analysis Laboratory (LADAL)</em>. The LADAL (pronouced <em>lah’dahl</em>) is a school-based, collaborative support infrastructure for digital and computational humanities established and maintained since 2019 by the <a href="https://languages-cultures.uq.edu.au/">School of Languages and Cultures</a> at the <a href="https://www.uq.edu.au/">University of Queensland</a>. The LADAL assists with data processing, visualization, and analysis and offers guidance on matters relating to language technology and digital research tools.</p>
+<hr />
+<div class="warning" style="padding:0.1em; background-color:#f2f2f2; color:#51247a">
+<span>
+<p style="margin-top:1em; text-align:center">
+Since going online January 1, 2021, LADAL has received more than <strong>100,000 unique page views</strong> of more than <strong>60,000 users</strong> in more than <strong>85,000 sessions</strong>! The majority of LADAL users access the LADAL website from the USA (app. 50%), Great Britain (app. 15%), Germany (app. 3%), and China (app. 2.5%). The highest number of unique users was April 27, 2021 with 824 unique users.
+</p>
+<p style="margin-left:1em;">
+</p>
+<p></span></p>
+</div>
+<hr />
+<hr />
+<p><img src="https://slcladal.github.io/images/goals2.jpg" width="50%" style="float:right; padding:15px" /></p>
+</div>
+<div id="goals" class="section level1 unnumbered">
+<h1>GOALS</h1>
+<p>The LADAL aims to help develop computational and digital skills by providing information and practical, hands-on tutorials on data and text analytics as well as on statistical methods relevant for language research. In addition, the LADAL provides self-guided study materials relevant for computational Natural Language Processing. In order to be attractive to both beginners and people with advanced skills, the LADAL website covers topics and introduces methods relevant for people coming with different degrees of prior knowledge and experience - ranging from introductions to concepts of quantitative reasoning to step-by-step guides on advanced statistical modeling.</p>
+<p>Since the primary concern of the LADAL is to introduce computational methods that are relevant to research involving natural language, the focus of this website is placed on linguistic data and methods relevant for text analytics. As such, the LADAL provides resources for (computational) text analytics and offers introductions to quantitative reasoning, research designs, and computational methods including data visualization and statistics. The areas covered on the LADAL website are</p>
+<p><img src="https://slcladal.github.io/images/dataviz.jpg" width="45%" style="float:left; padding:15px" /></p>
+<p><br></p>
+<ul>
+<li><p>introductions to quantitative reasoning and basic concepts in empirical language studies.</p></li>
+<li><p>introductions to R as programming environment for processing natural language data.</p></li>
+<li><p>tutorials on data visualization and data analytics (statistics and machine learning).</p></li>
+<li><p>tutorials on text analysis, text mining, distant reading, and corpus linguistics.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<div class="warning" style="padding:0.1em; background-color:#f2f2f2; color:#51247a">
+<span>
+<p style="margin-top:1em; text-align:center">
+<b>USER STORIES</b><br>We are currently looking for <strong>user stories</strong> (also known as <strong>testimonials</strong>) to see and show what people use LADAL resources for. If you have used LADAL resources - be it by simply copying some code, attending a workshop, learning about a method using a tutorial, or in any other way - we would be extremely grateful, if you would send us your user story! <br><br>To submit your user story, simply write up a paragraph describing how you have used LADAL resources and what you have used them for and send it to slcladal@uq.edu.au. We really appreciate any feedback from you about this!
+</p>
+<p style="margin-left:1em;">
+</p>
+<p></span></p>
+</div>
+<hr />
+<hr />
+<p><img src="https://slcladal.github.io/images/audience.jpg" width="45%" style="float:right; padding:15px" /></p>
+</div>
+<div id="audience" class="section level1 unnumbered">
+<h1>AUDIENCE</h1>
+<p>The LADAL resources are aimed at researchers in HASS (Humanities, Arts, and the Social Sciences) and we aspire to attract complete novices as well as expert users. And, while the focus of the LADAL website is placed on handling data that represents natural language, anyone who has an interest in quantitative methods, data visualization, statistics, or R is welcome to explore this webpage.</p>
+<p><br></p>
+<p><img src="https://slcladal.github.io/images/youtube.png" width="30%" style="float:right; padding:10px" /></p>
+</div>
+<div id="outreach" class="section level1 unnumbered">
+<h1>OUTREACH</h1>
+<p>At LADAL, we aim to reach out and make our resources available to the research community and anyone interested Language Technology, Data Analysis, and using computational means to extract, process, visualize and analyze language data. To this end, we offer workshops, give presentations and talks, organize webinars (see, e.g., the <a href="https://slcladal.github.io/opening.html">LADAL Webinar Series 2021</a>).</p>
+<p><img src="https://slcladal.github.io/images/facebook.png" width="15%" style="float:left; padding:10px" /></p>
+<p>In addition, we provide resources on the LADAL website and on the <a href="https://www.youtube.com/channel/UCrPUPT8UvOAxUnorC95-F4Q"><strong>LADAL YouTube channel</strong></a>, we announce updates on <strong>Twitter (@slcladal)</strong> as well as on our <a href="https://slcladal.github.io/news.html">NEWS site</a> and via our <a href="https://www.facebook.com/profile.php?id=100073328753218"><strong>Facebook</strong> page</a>. To get in touch, you can contact us on Twitter or send us an email via slcladal@uq.edu.au.</p>
+<p><br></p>
+<hr />
+<p><img src="https://slcladal.github.io/images/rcran.jpg" width="30%" style="float:right; padding:15px" /></p>
+</div>
+<div id="programming" class="section level1 unnumbered">
+<h1>PROGRAMMING</h1>
+<p>The LADAL primarily uses the programming language R because R is extremely flexible, relatively easy to learn, free and open source, and R has a substantive and very friendly user community. R is not merely a software package but a fully-fledged programming environment which allows complex Natural Language Processing, statistics and data visualizations and it can also be used to create websites or apps, and has direct pipelines for version control (Git). This website as well as the self-guided study materials offered by the LADAL use are written in R-markdown - a way to combine R-code with text. The flexibility of R makes it a sensible choice for researchers that strive for high quality and extreme flexibility while following best practices that enable complete replicability and full transparency.</p>
+<p><img src="https://slcladal.github.io/images/rstudiologo.png" width="30%" style="float:left; padding:15px" /></p>
+<p>As computation is becoming ever more prevalent across disciplines as well as in both the social and economic domains, the LADAL offers a resource space for R that make it accessible to lay users as well as expert programmers. That said, we will expand the resources provided by the LADAL to other tools and environments and include tutorials based on Python in the future.</p>
+<p><br></p>
+<hr />
+<p><img src="https://slcladal.github.io/images/license.png" width="30%" style="float:right; padding:15px" /></p>
+</div>
+<div id="licensing" class="section level1 unnumbered">
+<h1>LICENSING</h1>
+<p>The LADAL website was created by Martin Schweinberger. It was freely released under <a href="https://slcladal.netlify.com/license.html">GNU General Public License, Version 3, June 2007</a>.</p>
+<hr />
+</div>
+<div id="citation" class="section level1 unnumbered">
+<h1>CITATION</h1>
+<p>If you use (parts of) it for your own research or in your teaching materials, please cite the individual subpages as shown at the bottom of each page or reference it as:</p>
+<p>Schweinberger, Martin. 2021. <em>The Language Technology and Data Analysis Laboratory (LADAL)</em>. Brisbane: The University of Queensland, School of Languages and Cultures. url: <a href="https://slcladal.github.io/index.html" class="uri">https://slcladal.github.io/index.html</a> (Version 2021.10.24).</p>
+<pre><code>@manual{uqslc2021ladal,
+  author = {Schweinberger, Martin},
+  title = {The Language Technology and Data Analysis Laboratory (LADAL)},
+  note = {https://slcladal.github.io/index.html},
+  year = {2021},
+  organization = {The University of Queensland, School of Languages and Cultures},
+  address = {Brisbane},
+  edition = {2021.10.24}
+}</code></pre>
+<hr />
+</div>
+<div id="disclaimer" class="section level1 unnumbered">
+<h1>DISCLAIMER</h1>
+<p><img src="https://slcladal.github.io/images/uq_campus.jpg" width="45%" style="float:right; padding:15px" /></p>
+<p><br></p>
+<p>The content of this website is free and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute the content of LADAL resources given you adhere to the licensing. The content of this website is distributed under the terms of the <a href="https://slcladal.netlify.com/license.html">GNU General Public License, Version 3, June 2007</a>.</p>
+<p><br><br></p>
+<hr />
+<p><strong>Share and Enjoy!</strong></p>
+<hr />
+<p><a href="#welcome">Back to top</a></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+</body>
+</html>
