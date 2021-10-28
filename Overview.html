@@ -7,9 +7,6 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-<link rel="icon" 
-      type="image/x-icon" 
-      href="favicon.ico" />
 
 
 <meta name="author" content="Martin Schweinberger" />
@@ -18,17 +15,24 @@
 
 <title>SLAT7806: Research Methods</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -41,11 +45,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -58,32 +57,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 
@@ -94,10 +67,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -114,40 +83,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -175,7 +117,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -187,7 +129,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -198,10 +140,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -213,7 +168,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -266,8 +220,7 @@ $(document).ready(function () {
 
 
 
-<!-- added by SKC for LADAL Style -->
-<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
@@ -277,20 +230,8 @@ $(document).ready(function () {
 
 
 
+
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  
-  <!-- Added by SKC - LADAL image and thicker top with   -->
-  <div class="container-fluid navbar-top" >
-    <a href="index.html"> <!-- Make entire top row and text clickable home link  -->
-        <div class="row">
-            <div class="navbar-brand col-md-12">
-              <img src="ladal_icon_cas_tran_white_trimed.png" class="navbar-icon" alt="SLAT7855: Quantitative Research Methods"/>
-              <span class="navbar-title-note navbar-collapse collapse" >Language Technology and Data Analysis Laboratory</span>
-            </div>
-        </div>
-    </a>
-  </div>
-  
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -298,7 +239,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- SKC removed  navbar brand -->
+      <a class="navbar-brand" href="index.html">SLAT7855: Quantitative Research Methods</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -346,7 +287,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -361,7 +302,7 @@ $(document).ready(function () {
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>The course consists of 1-hour lectures and 2-hour tutorials. The lecture introduces a topic and the topic is then expanded upon and tackled practically in the tutorials. To pass this course, students need to take weekly pre-class quizzes that test the content of the readings and the lecture (50%). In addition, the students will have to submit a project proposal in which they describe a research project. Furthermore, students have to either submit a video of a presentation of the project proposal or present the project proposal in the last tutorial (10%).</p>
-<template id="b88d3704-8bda-4736-8c06-7ee9ca5c8e45"><style>
+<template id="ce161b79-46aa-40ab-be9e-60e885182cec"><style>
 .tabwid table{
   border-spacing:0px !important;
   border-collapse:collapse;
@@ -395,11 +336,15 @@ $(document).ready(function () {
 .tabwid table tr {
 background-color: transparent;
 }
-</style><div class="tabwid"><style>.cl-b33a17ac{}.cl-b32e5e76{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b32e5e77{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b32e8568{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b32e8569{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b32f6f1e{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f1f{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f20{width:207.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f21{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f22{width:49.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f23{width:248.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f24{width:207.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f25{width:210.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f26{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f27{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f6f28{width:207.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9750{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9751{width:49.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9752{width:210.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9753{width:207.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9754{width:248.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9755{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9756{width:207.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9757{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9758{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f9759{width:207.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32f975a{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd16{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd17{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd18{width:49.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd19{width:210.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd1a{width:207.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd1b{width:248.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd1c{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd1d{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd1e{width:207.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd1f{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fbd20{width:248.6pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fe552{width:207.6pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fe553{width:210.7pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b32fe554{width:49.3pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-b33a17ac'><caption class="Table Caption">Course plan for SLAT7806</caption><thead><tr style="overflow-wrap:break-word;"><td class="cl-b32fe554"><p class="cl-b32e8568"><span class="cl-b32e5e76">Week</span></p></td><td class="cl-b32fe552"><p class="cl-b32e8569"><span class="cl-b32e5e76">Topic</span></p></td><td class="cl-b32fbd20"><p class="cl-b32e8569"><span class="cl-b32e5e76">Reading</span></p></td><td class="cl-b32fe553"><p class="cl-b32e8569"><span class="cl-b32e5e76">url</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-b32f6f1e"><p class="cl-b32e8568"><span class="cl-b32e5e77">1</span></p></td><td class="cl-b32f6f20"><p class="cl-b32e8569"><span class="cl-b32e5e77">Introduction and overview</span></p></td><td class="cl-b32f6f21"><p class="cl-b32e8569"><span class="cl-b32e5e77">ECP</span></p></td><td class="cl-b32f6f1f"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f6f22"><p class="cl-b32e8568"><span class="cl-b32e5e77">2</span></p></td><td class="cl-b32f6f24"><p class="cl-b32e8569"><span class="cl-b32e5e77">What is science?</span></p></td><td class="cl-b32f6f23"><p class="cl-b32e8569"><span class="cl-b32e5e77">LADAL: Introduction to Quantitative Reasoning</span></p></td><td class="cl-b32f6f25"><p class="cl-b32e8569"><span class="cl-b32e5e77">https://slcladal.github.io/introquant.html</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32fbd16"><p class="cl-b32e8568"><span class="cl-b32e5e77">3</span></p></td><td class="cl-b32f9759"><p class="cl-b32e8569"><span class="cl-b32e5e77">Basic concepts in science</span></p></td><td class="cl-b32fbd17"><p class="cl-b32e8569"><span class="cl-b32e5e77">LADAL: Basic Concepts in Science</span></p></td><td class="cl-b32f975a"><p class="cl-b32e8569"><span class="cl-b32e5e77">https://slcladal.github.io/bsicquant.html</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f9751"><p class="cl-b32e8568"><span class="cl-b32e5e77">4</span></p></td><td class="cl-b32f9753"><p class="cl-b32e8569"><span class="cl-b32e5e77">Desinging a research project</span></p></td><td class="cl-b32f9754"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f9752"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32fbd16"><p class="cl-b32e8568"><span class="cl-b32e5e77">5</span></p></td><td class="cl-b32f9759"><p class="cl-b32e8569"><span class="cl-b32e5e77">Finding literature and referencing</span></p></td><td class="cl-b32fbd17"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f975a"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f9751"><p class="cl-b32e8568"><span class="cl-b32e5e77">6</span></p></td><td class="cl-b32f9753"><p class="cl-b32e8569"><span class="cl-b32e5e77">Academic integrity</span></p></td><td class="cl-b32f9754"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f9752"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32fbd16"><p class="cl-b32e8568"><span class="cl-b32e5e77">7</span></p></td><td class="cl-b32f9759"><p class="cl-b32e8569"><span class="cl-b32e5e77">Corpus linguistics</span></p></td><td class="cl-b32fbd17"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f975a"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32fbd18"><p class="cl-b32e8568"><span class="cl-b32e5e77">8</span></p></td><td class="cl-b32fbd1a"><p class="cl-b32e8569"><span class="cl-b32e5e77">Qualitative research</span></p></td><td class="cl-b32fbd1b"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32fbd19"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32fbd1c"><p class="cl-b32e8568"><span class="cl-b32e5e77">9</span></p></td><td class="cl-b32fbd1e"><p class="cl-b32e8569"><span class="cl-b32e5e77">Quantitative research: Describing data</span></p></td><td class="cl-b32fbd1f"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32fbd1d"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f6f22"><p class="cl-b32e8568"><span class="cl-b32e5e77">10</span></p></td><td class="cl-b32f6f24"><p class="cl-b32e8569"><span class="cl-b32e5e77">Quantitative research: Analyzing data</span></p></td><td class="cl-b32f6f23"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f6f25"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f6f26"><p class="cl-b32e8568"><span class="cl-b32e5e77">11</span></p></td><td class="cl-b32f6f28"><p class="cl-b32e8569"><span class="cl-b32e5e77">Writing up research</span></p></td><td class="cl-b32f9750"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f6f27"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f9751"><p class="cl-b32e8568"><span class="cl-b32e5e77">12</span></p></td><td class="cl-b32f9753"><p class="cl-b32e8569"><span class="cl-b32e5e77">Analyzing speech</span></p></td><td class="cl-b32f9754"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f9752"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b32f9758"><p class="cl-b32e8568"><span class="cl-b32e5e77">13</span></p></td><td class="cl-b32f9756"><p class="cl-b32e8569"><span class="cl-b32e5e77">Recap and student presentations</span></p></td><td class="cl-b32f9755"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td><td class="cl-b32f9757"><p class="cl-b32e8569"><span class="cl-b32e5e77"></span></p></td></tr></tbody></table></div></template>
-<div class="flextable-shadow-host" id="e5c0b705-89f7-4ead-b436-42ce51fec959"></div>
+</style><div class="tabwid"><style>.cl-fcf6e01e{}.cl-fcecad38{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fcecad39{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fcecd48e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fcecd48f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fcecfa72{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa73{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa74{width:215pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa75{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa76{width:49.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa77{width:248.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa78{width:215pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa79{width:210.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa7a{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa7b{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fcecfa7c{width:215pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced229a{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced229b{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced229c{width:215pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced229d{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced229e{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced229f{width:49.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced22a0{width:210.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced22a1{width:215pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced22a2{width:248.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced22a3{width:215pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced22a4{width:210.7pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced4978{width:49.3pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced4979{width:248.6pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced497a{width:49.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced497b{width:210.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced497c{width:215pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced497d{width:248.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced497e{width:248.6pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced497f{width:215pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced4980{width:210.7pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fced4981{width:49.3pt;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-fcf6e01e'>
+<caption class="Table Caption">
+<p>Course plan for SLAT7806</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-fced4981"><p class="cl-fcecd48e"><span class="cl-fcecad38">Week</span></p></td><td class="cl-fced497f"><p class="cl-fcecd48f"><span class="cl-fcecad38">Topic</span></p></td><td class="cl-fced497e"><p class="cl-fcecd48f"><span class="cl-fcecad38">Reading</span></p></td><td class="cl-fced4980"><p class="cl-fcecd48f"><span class="cl-fcecad38">url</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa72"><p class="cl-fcecd48e"><span class="cl-fcecad39">1</span></p></td><td class="cl-fcecfa74"><p class="cl-fcecd48f"><span class="cl-fcecad39">Introduction and overview</span></p></td><td class="cl-fcecfa75"><p class="cl-fcecd48f"><span class="cl-fcecad39">ECP</span></p></td><td class="cl-fcecfa73"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fced229f"><p class="cl-fcecd48e"><span class="cl-fcecad39">2</span></p></td><td class="cl-fced22a1"><p class="cl-fcecd48f"><span class="cl-fcecad39">What is science?</span></p></td><td class="cl-fced22a2"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Introduction to Quantitative Reasoning</span></p></td><td class="cl-fced22a0"><p class="cl-fcecd48f"><span class="cl-fcecad39">https://slcladal.github.io/introquant.html</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fced4978"><p class="cl-fcecd48e"><span class="cl-fcecad39">3</span></p></td><td class="cl-fced22a3"><p class="cl-fcecd48f"><span class="cl-fcecad39">Basic concepts in science</span></p></td><td class="cl-fced4979"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Basic Concepts in Science</span></p></td><td class="cl-fced22a4"><p class="cl-fcecd48f"><span class="cl-fcecad39">https://slcladal.github.io/bsicquant.html</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fced497a"><p class="cl-fcecd48e"><span class="cl-fcecad39">4</span></p></td><td class="cl-fced497c"><p class="cl-fcecd48f"><span class="cl-fcecad39">Introduction to R and RStudio</span></p></td><td class="cl-fced497d"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Getting started with R</span></p></td><td class="cl-fced497b"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa7a"><p class="cl-fcecd48e"><span class="cl-fcecad39">5</span></p></td><td class="cl-fcecfa7c"><p class="cl-fcecd48f"><span class="cl-fcecad39">Working with data</span></p></td><td class="cl-fced229a"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Working with tables</span></p></td><td class="cl-fcecfa7b"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa76"><p class="cl-fcecd48e"><span class="cl-fcecad39">6</span></p></td><td class="cl-fcecfa78"><p class="cl-fcecd48f"><span class="cl-fcecad39">Visualizing data</span></p></td><td class="cl-fcecfa77"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Data Visualization with R</span></p></td><td class="cl-fcecfa79"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fced229e"><p class="cl-fcecd48e"><span class="cl-fcecad39">7</span></p></td><td class="cl-fced229c"><p class="cl-fcecd48f"><span class="cl-fcecad39">Descriptive statistics</span></p></td><td class="cl-fced229b"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Descriptive statistics</span></p></td><td class="cl-fced229d"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa76"><p class="cl-fcecd48e"><span class="cl-fcecad39">8</span></p></td><td class="cl-fcecfa78"><p class="cl-fcecd48f"><span class="cl-fcecad39">Introduction to regression</span></p></td><td class="cl-fcecfa77"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Regression Analysis</span></p></td><td class="cl-fcecfa79"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fced4978"><p class="cl-fcecd48e"><span class="cl-fcecad39">9</span></p></td><td class="cl-fced22a3"><p class="cl-fcecd48f"><span class="cl-fcecad39">Logistic regression and model fitting</span></p></td><td class="cl-fced4979"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Regression Analysis</span></p></td><td class="cl-fced22a4"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa76"><p class="cl-fcecd48e"><span class="cl-fcecad39">10</span></p></td><td class="cl-fcecfa78"><p class="cl-fcecd48f"><span class="cl-fcecad39">More on regression</span></p></td><td class="cl-fcecfa77"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Regression Analysis</span></p></td><td class="cl-fcecfa79"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa7a"><p class="cl-fcecd48e"><span class="cl-fcecad39">11</span></p></td><td class="cl-fcecfa7c"><p class="cl-fcecd48f"><span class="cl-fcecad39">Mixed effects models</span></p></td><td class="cl-fced229a"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Regression Analysis</span></p></td><td class="cl-fcecfa7b"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fcecfa76"><p class="cl-fcecd48e"><span class="cl-fcecad39">12</span></p></td><td class="cl-fcecfa78"><p class="cl-fcecd48f"><span class="cl-fcecad39">Tree-based models and cluster analysis</span></p></td><td class="cl-fcecfa77"><p class="cl-fcecd48f"><span class="cl-fcecad39">LADAL: Tree-based models / Cluster Analsis</span></p></td><td class="cl-fcecfa79"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fced229e"><p class="cl-fcecd48e"><span class="cl-fcecad39">13</span></p></td><td class="cl-fced229c"><p class="cl-fcecd48f"><span class="cl-fcecad39">Recap and student presentations</span></p></td><td class="cl-fced229b"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td><td class="cl-fced229d"><p class="cl-fcecd48f"><span class="cl-fcecad39"></span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="2f49e52d-a117-41f8-a552-7cb2ea33f6a5"></div>
 <script>
-var dest = document.getElementById("e5c0b705-89f7-4ead-b436-42ce51fec959");
-var template = document.getElementById("b88d3704-8bda-4736-8c06-7ee9ca5c8e45");
+var dest = document.getElementById("2f49e52d-a117-41f8-a552-7cb2ea33f6a5");
+var template = document.getElementById("ce161b79-46aa-40ab-be9e-60e885182cec");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -580,7 +525,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -597,7 +542,6 @@ $(document).ready(function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
-
 
 </body>
 </html>
