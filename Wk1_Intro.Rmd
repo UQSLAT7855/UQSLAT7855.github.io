@@ -1,0 +1,61 @@
+---
+title: 'Week 1: Introduction and overview'
+author: "Martin Schweinberger"
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+output:
+  html_document: default
+bibliography: bibliography.bib
+link-citations: yes
+---
+
+
+```{r uq1, echo=F, fig.cap="", message=FALSE, warning=FALSE, out.width='100%'}
+knitr::include_graphics("https://slcladal.github.io/images/uq1.jpg")
+```
+
+# Introduction{-}
+
+The session provides an overview of the course and introduces basic concepts related to research methodology.
+
+# Ground rules{-}
+
+Camera on
+
+# Electronic Course Profile{-}
+
+# Assessments{-}
+
+# Applying for extension{-}
+
+See section 5.3 of the ECP
+
+If you need and extension, you have to apply **before the due date** and you have to formally apply for an extension (see [here](https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-extension)).
+
+[Here](https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-extension?p=1#1) is an overview of the grounds for extension and the required documents.
+
+
+# Citation & Session Info {-}
+
+Schweinberger, Martin. `r format(Sys.time(), '%Y')`. *SLAT7806: Research Methods*. Brisbane: The University of Queensland. url: https://slcladal.github.io/basicquant.html   (Version `r format(Sys.time(), '%Y.%m.%d')`).
+
+```
+@manual{schweinberger2021slat7855,
+  author = {Schweinberger, Martin},
+  title = {SLAT7855: Quantitative Research Methods},
+  note = {https://slcladal.github.io/slat7855_wk1.html},
+  year = {`r format(Sys.time(), '%Y')`},
+  organization = "The University of Queensland, Australia. School of Languages and Cultures},
+  address = {Brisbane},
+  edition = {`r format(Sys.time(), '%Y.%m.%d')`}
+}
+```
+
+***
+
+[Back to top](#introduction)
+
+***
+
+# References {-}
+
+

@@ -1,8 +1,8 @@
 name: "my-website"
 navbar:
-  title: "SLAT7806: Research Methods"
+  title: "SLAT7855: Quantitative Research Methods"
   left:
-    - text: "SLAT7806: Important information"
+    - text: "SLAT7855: Important information"
       menu:
       - text: "Course schedule"
         href: Overview.html
